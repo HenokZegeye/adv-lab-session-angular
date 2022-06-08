@@ -1,20 +1,7 @@
-<h1 style="color: blue;">Programs</h1>
 
+<h1 style="color: blue;">Programs</h1>
 <div class="grid col-2">
-  <table>
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Action</th>
-    </tr>
-    <tr *ngFor="let program of programs" style="text-align: center;">
-      <td>{{program.code}}</td>
-      <td>{{program.name}}</td>
-      <td>{{program.description}}</td>
-      <td><button>Edit</button></td>
-    </tr>
-  </table>
+  <app-program-list></app-program-list>
   <div class="form">
     <h3>Program Form</h3>
     <form [formGroup]="programForm" (ngSubmit)="onSubmit()">
