@@ -1,0 +1,9 @@
+<div class="form">
+    <h3>Program Form</h3>
+    <form [formGroup]="programForm" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Code" formControlName="code" class="full-width m-3">
+      <input type="text" placeholder="Name" formControlName="name" class="full-width m-3">
+      <input type="text" placeholder="Description" formControlName="description" class="full-width m-3">
+      <button type="submit" class="m-3 btn">Save</button>
+    </form>
+  </div>

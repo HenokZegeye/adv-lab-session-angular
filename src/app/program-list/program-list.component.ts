@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,14 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./program-list.component.scss']
 })
 export class ProgramListComponent implements OnInit {
-  programs = [
-    {name: 'Software Engineering', code: 'SWENG', description: 'Cool Program'},
-    {name: 'IT and Systems', code: 'ITSYS', description: ''},
-    {name: 'Program three', code: 'Program 3', description: ''}
-  ];
-  constructor() { }
+  programs: any[] = [];
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.loadPrograms();
+  }
+
+
+  loadPrograms(): void {
+    this.http.get('http://localhost:3000/programs').subscribe((response: any) => {
+      this.programs = response.data;
+    })
   }
 
 }

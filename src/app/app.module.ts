@@ -6,11 +6,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProgramListComponent } from './program-list/program-list.component';
+import { ProgramFormComponent } from './program-form/program-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProgramListComponent
+    ProgramListComponent,
+    ProgramFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -12,13 +11,9 @@ export class AppComponent implements OnInit {
   title = 'mini-student-application-client';
 
   
-  programForm: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpClient) {
-    this.programForm = fb.group({
-      code: '',
-      name: '',
-      description: ''
-    })
+  
+  constructor(private http: HttpClient) {
+    
   }
 
   ngOnInit(): void {
@@ -34,8 +29,8 @@ export class AppComponent implements OnInit {
   // }
 
   onSubmit(): void {
-    const payload = this.programForm.value;
+    // const payload = this.programForm.value;
     // this.programs.push(payload);
-    this.programForm.patchValue({code: '', name: '', description: ''});
+    // this.programForm.patchValue({code: '', name: '', description: ''});
   }
 }
